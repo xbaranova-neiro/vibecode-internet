@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="ru" data-vb-morning-hour="12">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Удалённая работа на нейросетях</title>
+  <meta name="description" content="Занятость: удалённо, свободный график. Опыт: не требуется. Обучение: бесплатное, 3 часа.">
+  <link rel="canonical" href="https://vibecode.neiroguru.ru/internet/">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://vibecode.neiroguru.ru/internet/">
+  <meta property="og:title" content="Удалённая работа на нейросетях: собирать сайты и ботов на заказ">
+  <meta property="og:description" content="Занятость: удалённо, свободный график. Опыт: не требуется. Обучение: бесплатное, 3 часа.">
+  <meta property="og:image" content="https://vibecode.neiroguru.ru/internet/assets/hero-1.jpg">
+  <meta property="og:site_name" content="Ксения Баранова · Школа нейросетей">
+  <meta property="og:locale" content="ru_RU">
+  <link rel="preload" as="font" type="font/woff2" href="assets/fonts/ibm-plex-sans-cyrillic.woff2" crossorigin>
+  <link rel="preload" as="font" type="font/woff2" href="assets/fonts/ibm-plex-sans-latin.woff2" crossorigin>
+  <style id="local-fonts">
+/* Self-hosted longreads fonts */
+
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: italic;
+  font-weight: 600;
+  font-display: block;
+  src: url('assets/fonts/cormorant-garamond-italic-cyrillic-ext.woff2') format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+
+/* cyrillic */
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: italic;
+  font-weight: 600;
+  font-display: block;
+  src: url('assets/fonts/cormorant-garamond-italic-cyrillic.woff2') format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+
+/* latin-ext */
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: italic;
+  font-weight: 600;
+  font-display: block;
+  src: url('assets/fonts/cormorant-garamond-italic-latin-ext.woff2') format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+/* latin */
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: italic;
+  font-weight: 600;
+  font-display: block;
+  src: url('assets/fonts/cormorant-garamond-italic-latin.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: normal;
+  font-weight: 500 600;
+  font-display: block;
+  src: url('assets/fonts/cormorant-garamond-cyrillic-ext.woff2') format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+
+/* cyrillic */
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: normal;
+  font-weight: 500 600;
+  font-display: block;
+  src: url('assets/fonts/cormorant-garamond-cyrillic.woff2') format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+
+/* latin-ext */
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: normal;
+  font-weight: 500 600;
+  font-display: block;
+  src: url('assets/fonts/cormorant-garamond-latin-ext.woff2') format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+/* latin */
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: normal;
+  font-weight: 500 600;
+  font-display: block;
+  src: url('assets/fonts/cormorant-garamond-latin.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* cyrillic-ext */
+@font-face {
+  font-family: 'IBM Plex Sans';
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: block;
+  src: url('assets/fonts/ibm-plex-sans-cyrillic-ext.woff2') format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+
+/* cyrillic */
+@font-face {
+  font-family: 'IBM Plex Sans';
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: block;
+  src: url('assets/fonts/ibm-plex-sans-cyrillic.woff2') format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+
+/* latin-ext */
+@font-face {
+  font-family: 'IBM Plex Sans';
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: block;
+  src: url('assets/fonts/ibm-plex-sans-latin-ext.woff2') format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+/* latin */
+@font-face {
+  font-family: 'IBM Plex Sans';
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: block;
+  src: url('assets/fonts/ibm-plex-sans-latin.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Onest';
+  font-style: normal;
+  font-weight: 400 800;
+  font-display: block;
+  src: url('assets/fonts/onest-cyrillic-ext.woff2') format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+
+/* cyrillic */
+@font-face {
+  font-family: 'Onest';
+  font-style: normal;
+  font-weight: 400 800;
+  font-display: block;
+  src: url('assets/fonts/onest-cyrillic.woff2') format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+
+/* latin-ext */
+@font-face {
+  font-family: 'Onest';
+  font-style: normal;
+  font-weight: 400 800;
+  font-display: block;
+  src: url('assets/fonts/onest-latin-ext.woff2') format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+/* latin */
+@font-face {
+  font-family: 'Onest';
+  font-style: normal;
+  font-weight: 400 800;
+  font-display: block;
+  src: url('assets/fonts/onest-latin.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Unbounded';
+  font-style: normal;
+  font-weight: 500 700;
+  font-display: block;
+  src: url('assets/fonts/unbounded-cyrillic-ext.woff2') format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+
+/* cyrillic */
+@font-face {
+  font-family: 'Unbounded';
+  font-style: normal;
+  font-weight: 500 700;
+  font-display: block;
+  src: url('assets/fonts/unbounded-cyrillic.woff2') format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+
+/* latin-ext */
+@font-face {
+  font-family: 'Unbounded';
+  font-style: normal;
+  font-weight: 500 700;
+  font-display: block;
+  src: url('assets/fonts/unbounded-latin-ext.woff2') format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+/* latin */
+@font-face {
+  font-family: 'Unbounded';
+  font-style: normal;
+  font-weight: 500 700;
+  font-display: block;
+  src: url('assets/fonts/unbounded-latin.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+  </style>
+  <link rel="stylesheet" href="assets/longreads.css?v=qa-fix1">
+  <link rel="preload" as="image" href="assets/hero-1.jpg" fetchpriority="high">
+  <!-- Yandex.Metrika counter -->
+  <script type="text/javascript">
+      (function(m,e,t,r,i,k,a){
+          m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+          m[i].l=1*new Date();
+          for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+          k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+      })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=110878568', 'ym');
+
+      ym(110878568, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
+  </script>
+  <noscript><div><img src="https://mc.yandex.ru/watch/110878568" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+  <!-- /Yandex.Metrika counter -->
+  <script>
+    (function () {
+      var KEYS = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term'];
+      var q = new URLSearchParams(location.search);
+      var hit = false;
+      KEYS.forEach(function (k) {
+        var v = q.get(k);
+        if (v) { try { sessionStorage.setItem('utm_' + k, v); } catch (e) {} hit = true; }
+      });
+      if (!hit) {
+        KEYS.forEach(function (k) {
+          var v = q.get(k);
+          if (!v) { try { v = sessionStorage.getItem('utm_' + k); } catch (e) {} }
+          if (v) q.set(k, v);
+        });
+      }
+      window.__utmParams = function () {
+        var p = new URLSearchParams();
+        KEYS.forEach(function (k) {
+          var v;
+          try { v = sessionStorage.getItem('utm_' + k); } catch (e) {}
+          if (!v) v = new URLSearchParams(location.search).get(k);
+          if (v) p.set(k, v);
+        });
+        return p;
+      };
+      window.__withUtm = function (url) {
+        if (!url || url.charAt(0) === '#') return url;
+        try {
+          var u = new URL(url, location.href);
+          window.__utmParams().forEach(function (v, k) {
+            if (!u.searchParams.has(k)) u.searchParams.set(k, v);
+          });
+          return u.toString();
+        } catch (e) { return url; }
+      };
+    })();
+  </script>
+</head>
+<body>
+<main class="job-site">
+  <div class="hero-nav"><header class="nav-shell inverse">
+  <nav><a href="#pay">Оплата</a><a href="#train">Обучение</a><a href="#register">Регистрация</a></nav>
+  <a href="#register" class="nav-action">Участие бесплатное <span>↗</span></a>
+</header></div>
+  <article>
+    <section class="job-hero">
+      <div class="job-hero__photo" aria-hidden="true">
+        <img src="assets/hero-1.jpg" alt="" width="1672" height="941" decoding="async">
+      </div>
+      <div class="job-main">
+        <h1>Удалённая работа на нейросетях: собирать сайты и ботов на заказ</h1>
+        <p class="job-dek">Занятость: удалённо, свободный график. Опыт: не требуется.<br>Обучение: бесплатное, 3 часа.</p>
+        <div class="reg-btn-row job-hero-btns">
+          <a href="#" data-vb-open="morning"><span class="cta-label">Зарегистрироваться на 12:00</span><span class="cta-meta">· <span data-vb-hero-date="morning"></span> →</span></a>
+          <a href="#" data-vb-open="evening"><span class="cta-label">Зарегистрироваться на 19:00</span><span class="cta-meta">· <span data-vb-hero-date="evening"></span> →</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="job-opening">
+      <p class="job-lead">Рынку не хватает людей, которые умеют быстро собирать сайты, чат-боты и небольшие сервисы.</p>
+      <div class="job-opening__body">
+        <p>Раньше эту работу делали только программисты — долго и дорого. В 2026 году её можно выполнять без кода, с помощью нейросетей. Спрос остался, а исполнителей, которые освоили новый способ, пока мало.</p>
+        <p class="job-opening__accent">Поэтому направление открыто для новичков. Диплом и опыт в IT не нужны.</p>
+      </div>
+      <div class="reg-btn-row section-cta"><a href="#" class="btn-main" data-vb-open="morning"><span class="cta-label">Зарегистрироваться на 12:00</span><span class="cta-meta">· <span data-vb-hero-date="morning"></span> →</span></a><a href="#" class="btn-main" data-vb-open="evening"><span class="cta-label">Зарегистрироваться на 19:00</span><span class="cta-meta">· <span data-vb-hero-date="evening"></span> →</span></a></div>
+    </section>
+
+    <section class="job-block job-tasks" id="work">
+      <div class="job-block__head">
+        <p class="mini-label">Обязанности</p>
+        <h2>Что входит в работу</h2>
+      </div>
+      <div class="job-task-grid">
+        <article class="job-task">
+          <span class="job-task__n" aria-hidden="true">01</span>
+          <span class="job-task__meta">~ 2 часа</span>
+          <p>Собрать лендинг или сайт для клиента — около двух часов.</p>
+        </article>
+        <article class="job-task">
+          <span class="job-task__n" aria-hidden="true">02</span>
+          <span class="job-task__meta">~ 3 часа</span>
+          <p>Собрать чат-бота в ВК или MAX по сценариям заказчика — около трёх часов.</p>
+        </article>
+        <article class="job-task">
+          <span class="job-task__n" aria-hidden="true">03</span>
+          <span class="job-task__meta">ИИ</span>
+          <p>Подключить ИИ к сайту, чтобы он сам отвечал посетителям.</p>
+        </article>
+        <article class="job-task">
+          <span class="job-task__n" aria-hidden="true">04</span>
+          <span class="job-task__meta">Сервис</span>
+          <p>Собрать небольшой сервис под конкретную задачу бизнеса.</p>
+        </article>
+      </div>
+      <p class="job-task-note">Никаких звонков, офиса и продаж по телефону. Ноутбук и интернет.</p>
+      <div class="reg-btn-row section-cta"><a href="#" class="btn-main" data-vb-open="morning"><span class="cta-label">Зарегистрироваться на 12:00</span><span class="cta-meta">· <span data-vb-hero-date="morning"></span> →</span></a><a href="#" class="btn-main" data-vb-open="evening"><span class="cta-label">Зарегистрироваться на 19:00</span><span class="cta-meta">· <span data-vb-hero-date="evening"></span> →</span></a></div>
+    </section>
+
+    <section class="job-block job-pay" id="pay">
+      <div class="job-pay__inner">
+        <div class="job-block__head">
+          <p class="mini-label">Оплата</p>
+          <h2>Сколько платят</h2>
+          <p class="job-pay__lead">Оплата сдельная — за проект, а не за часы.</p>
+        </div>
+        <div class="job-pay-rates">
+          <article class="job-pay-rate">
+            <span class="job-pay-rate__label">Лендинг</span>
+            <strong class="job-pay-rate__price">от 20 000 ₽</strong>
+            <p>за работу</p>
+          </article>
+          <article class="job-pay-rate job-pay-rate--accent">
+            <span class="job-pay-rate__label">Чат-бот</span>
+            <strong class="job-pay-rate__price">от 40 000 ₽</strong>
+            <p>за работу</p>
+          </article>
+          <article class="job-pay-rate job-pay-rate--hero">
+            <span class="job-pay-rate__label">3–5 проектов в месяц</span>
+            <strong class="job-pay-rate__price">от 60 000 ₽</strong>
+            <p>при частичной занятости</p>
+          </article>
+        </div>
+        <ul class="job-pay-facts">
+          <li>Лендинг — от 20 000 ₽ за работу.</li>
+          <li>Чат-бот — от 40 000 ₽ за работу.</li>
+          <li>Подключение ИИ к сайту и мини-сервисы — отдельными задачами.</li>
+          <li>При 3–5 проектах в месяц выходит от 60 000 ₽. Занятость при этом частичная — вечерами или в выходные, без увольнения с основной работы.</li>
+          <li>Это не «пассивный доход» и не схема с вложениями. Обычная сдельная работа на заказ — просто она перестала требовать диплома программиста.</li>
+        </ul>
+        <div class="reg-btn-row section-cta"><a href="#" class="btn-main" data-vb-open="morning"><span class="cta-label">Зарегистрироваться на 12:00</span><span class="cta-meta">· <span data-vb-hero-date="morning"></span> →</span></a><a href="#" class="btn-main" data-vb-open="evening"><span class="cta-label">Зарегистрироваться на 19:00</span><span class="cta-meta">· <span data-vb-hero-date="evening"></span> →</span></a></div>
+      </div>
+    </section>
+
+    <section class="job-block job-reqs" id="reqs">
+      <div class="job-block__head">
+        <p class="mini-label">Кандидат</p>
+        <h2>Требования</h2>
+      </div>
+      <div class="job-req-grid">
+        <article class="job-req">
+          <span class="job-req__ck" aria-hidden="true">✓</span>
+          <p>Уверенный пользователь компьютера.</p>
+        </article>
+        <article class="job-req">
+          <span class="job-req__ck" aria-hidden="true">✓</span>
+          <p>Готовность потратить 3 часа на обучение.</p>
+        </article>
+        <article class="job-req">
+          <span class="job-req__ck" aria-hidden="true">✓</span>
+          <p>Внимательность к задаче заказчика.</p>
+        </article>
+      </div>
+      <p class="job-req-note">Опыт в программировании не нужен. Возраст значения не имеет. Среди тех, кто уже освоил направление, есть люди самых разных профессий.</p>
+      <div class="reg-btn-row section-cta"><a href="#" class="btn-main" data-vb-open="morning"><span class="cta-label">Зарегистрироваться на 12:00</span><span class="cta-meta">· <span data-vb-hero-date="morning"></span> →</span></a><a href="#" class="btn-main" data-vb-open="evening"><span class="cta-label">Зарегистрироваться на 19:00</span><span class="cta-meta">· <span data-vb-hero-date="evening"></span> →</span></a></div>
+    </section>
+
+    <section class="job-block job-stories" id="stories">
+      <div class="job-block__head">
+        <p class="mini-label">Кейсы</p>
+        <h2>Кто уже работает так</h2>
+      </div>
+      <div class="job-story-list">
+        <article class="job-story">
+          <div class="job-story__top">
+            <div>
+              <b>Карина</b>
+              <span>Маркетинг → проекты</span>
+            </div>
+            <em>300 000 ₽/мес</em>
+          </div>
+          <p>Карина занималась маркетингом — сейчас выходит на 300 000 ₽ в месяц на проектах.</p>
+        </article>
+        <article class="job-story">
+          <div class="job-story__top">
+            <div>
+              <b>Денис</b>
+              <span>Оптометрист</span>
+            </div>
+            <em>Сервис под работу</em>
+          </div>
+          <p>Денис был оптометристом, к IT отношения не имел — собрал сервис под свою работу.</p>
+        </article>
+        <article class="job-story">
+          <div class="job-story__top">
+            <div>
+              <b>Ольга</b>
+              <span>Фотограф</span>
+            </div>
+            <em>Своя система</em>
+          </div>
+          <p>Ольга — фотограф. Сделала себе систему учёта клиентов вместо того, чтобы заказывать её у подрядчика.</p>
+        </article>
+      </div>
+      <p class="job-stories-foot">Больше 2 000 человек уже собрали своё первое приложение.</p>
+      <div class="reg-btn-row section-cta"><a href="#" class="btn-main" data-vb-open="morning"><span class="cta-label">Зарегистрироваться на 12:00</span><span class="cta-meta">· <span data-vb-hero-date="morning"></span> →</span></a><a href="#" class="btn-main" data-vb-open="evening"><span class="cta-label">Зарегистрироваться на 19:00</span><span class="cta-meta">· <span data-vb-hero-date="evening"></span> →</span></a></div>
+    </section>
+
+    <section class="job-block job-train" id="train">
+      <div class="job-train__inner">
+        <div class="job-block__head">
+          <p class="mini-label">Эфир</p>
+          <h2>Обучение — бесплатное, 3 часа</h2>
+          <p class="job-train__lead">Чтобы начать, нужно освоить сам навык. Это делается на бесплатном практическом эфире — не лекция, а работа вместе с ведущим.</p>
+        </div>
+        <ol class="job-train-steps">
+          <li>
+            <div class="job-train-steps__mark">
+              <span class="job-train-steps__ico" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a8 8 0 0 1-8 8H7l-4 3V12a8 8 0 0 1 8-8h2a8 8 0 0 1 8 8z"/><path d="M8.5 12h.01M12 12h.01M15.5 12h.01"/></svg>
+              </span>
+              <span class="job-train-steps__n">01</span>
+            </div>
+            <div>
+              <h3>Чат-бот в ВК</h3>
+              <p>Собираете чат-бота в ВК под конкретные сценарии.</p>
+            </div>
+          </li>
+          <li>
+            <div class="job-train-steps__mark">
+              <span class="job-train-steps__ico" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="3" width="12" height="14" rx="3"/><path d="M9 21h6M12 17v4"/><path d="M10 9h4M10 12h2"/></svg>
+              </span>
+              <span class="job-train-steps__n">02</span>
+            </div>
+            <div>
+              <h3>Бот в MAX</h3>
+              <p>Собираете бота в MAX.</p>
+            </div>
+          </li>
+          <li>
+            <div class="job-train-steps__mark">
+              <span class="job-train-steps__ico" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 3v2M12 19v2M3 12h2M19 12h2M5.6 5.6l1.4 1.4M17 17l1.4 1.4M5.6 18.4l1.4-1.4M17 7l1.4-1.4"/></svg>
+              </span>
+              <span class="job-train-steps__n">03</span>
+            </div>
+            <div>
+              <h3>GigaChat на сайте</h3>
+              <p>Подключаете GigaChat к сайту — ИИ отвечает пользователям сам.</p>
+            </div>
+          </li>
+          <li>
+            <div class="job-train-steps__mark">
+              <span class="job-train-steps__ico" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M3 9h18M8 20h8"/></svg>
+              </span>
+              <span class="job-train-steps__n">04</span>
+            </div>
+            <div>
+              <h3>Первый веб-сервис</h3>
+              <p>Собираете первый веб-сервис: из идеи в готовый продукт.</p>
+            </div>
+          </li>
+        </ol>
+        <div class="job-train-result">
+          <span class="job-train-result__label">Итог эфира</span>
+          <p>К концу эфира у вас на руках три готовых работы — их уже можно показывать заказчику как портфолио.</p>
+        </div>
+        <div class="reg-btn-row section-cta"><a href="#" class="btn-main" data-vb-open="morning"><span class="cta-label">Зарегистрироваться на 12:00</span><span class="cta-meta">· <span data-vb-hero-date="morning"></span> →</span></a><a href="#" class="btn-main" data-vb-open="evening"><span class="cta-label">Зарегистрироваться на 19:00</span><span class="cta-meta">· <span data-vb-hero-date="evening"></span> →</span></a></div>
+      </div>
+    </section>
+
+    <section class="final-register" id="register">
+  <div class="register-pitch">
+    <div class="register-who">
+      <figure class="register-photo">
+        <img src="assets/ksenia-portrait.jpg" alt="Ксения Баранова" width="640" height="640" loading="lazy">
+      </figure>
+      <div class="register-who__text">
+        <p class="mini-label">Ведёт</p>
+        <h2 class="register-name">Ксения Баранова</h2>
+      </div>
+    </div>
+    <ul class="register-facts"><li><span class="ck" aria-hidden="true">✓</span>Основатель одной из крупнейших школ по нейросетям в СНГ.</li><li><span class="ck" aria-hidden="true">✓</span>Более 400 000 учеников прошли обучающие программы по ИИ.</li><li><span class="ck" aria-hidden="true">✓</span>Приглашённый эксперт по ИИ в Госдуме РФ.</li><li><span class="ck" aria-hidden="true">✓</span>Победитель премии GetAward 2026 в номинации «Обучение года».</li></ul>
+  </div>
+  <div class="register-cta">
+    <p class="register-free">Участие бесплатное</p>
+    <p class="register-send">Ссылку на эфир пришлём на почту и в бота.</p>
+    <div class="reg-btn-row section-cta register-cta__btns"><a href="#" class="btn-main" data-vb-open="morning"><span class="cta-label">Зарегистрироваться на 12:00</span><span class="cta-meta">· <span data-vb-hero-date="morning"></span> →</span></a><a href="#" class="btn-main" data-vb-open="evening"><span class="cta-label">Зарегистрироваться на 19:00</span><span class="cta-meta">· <span data-vb-hero-date="evening"></span> →</span></a></div>
+    <p class="register-note">Посмотреть ничего не стоит — а дальше решите сами, брать заказы или собирать что-то для себя.</p>
+  </div>
+</section>
+    <footer class="site-footer">
+  <div class="site-footer__wrap">
+    <div class="site-footer-top">
+      <div>
+        <p class="site-footer-brand">Ксения Баранова</p>
+        <p class="site-footer-tag">Школа SMM и нейросетей</p>
+        <p class="site-footer-desc">Занятость: удалённо, свободный график. Опыт: не требуется. Обучение: бесплатное, 3 часа.</p>
+      </div>
+      <div>
+        <p class="site-footer-col-title">Занять место на эфире</p>
+        <div class="site-footer-cta">
+          <a href="#" class="btn-main" data-vb-open="morning">Регистрация на 12:00 МСК · <span data-vb-hero-date="morning"></span></a>
+          <a href="#" class="btn-main" data-vb-open="evening">Регистрация на 19:00 МСК · <span data-vb-hero-date="evening"></span></a>
+        </div>
+        <div class="site-footer-links">
+          <a href="https://xeniabaranova-school.ru/politica" target="_blank" rel="noopener noreferrer">Политика обработки данных</a>
+          <a href="https://xeniabaranova-school.ru/oferta_vibe-code" target="_blank" rel="noopener noreferrer">Публичная оферта</a>
+        </div>
+      </div>
+    </div>
+    <div class="site-footer-bottom">
+      <p class="site-footer-copy">© 2026 Ксения Баранова. Все права защищены.</p>
+      <p class="site-footer-legal">ИП Баранова Ксения Николаевна · ИНН 027402381827 · ОГРНИП 317028000116318 · Лицензия № Л035-01198-02/00172850 (Министерство образования и науки)</p>
+    </div>
+  </div>
+</footer>
+  </article>
+</main>
+
+<div class="reg-popup" id="reg-popup" aria-hidden="true">
+  <button type="button" class="reg-popup-backdrop" data-reg-close aria-label="Закрыть"></button>
+  <div class="reg-popup-panel" role="dialog" aria-modal="true" aria-labelledby="reg-popup-title">
+    <button type="button" class="reg-popup-close" data-reg-close aria-label="Закрыть">&times;</button>
+    <p id="reg-popup-title" class="sr-only">Регистрация на вебинар</p>
+    <div class="reg-popup-widget" id="reg-widget-host">
+      <div class="reg-popup-loader" aria-hidden="true"></div>
+      <div id="reg-slot-morning" class="reg-gc-slot">
+        <script id="e04c03445c8ba4aec27ab796b60f0f071be8d545" src="https://neyroseti.neiroguru.ru/pl/lite/widget/script?id=1603538"></script>
+      </div>
+      <div id="reg-slot-evening" class="reg-gc-slot">
+        <script id="a8f9560ed2afaa8af661741fad2cba9bd600204e" src="https://neyroseti.neiroguru.ru/pl/lite/widget/script?id=1603540"></script>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="assets/js/neiro-vb-landing.js"></script>
+<script>
+/* GetCourse: id=1603538 утро, id=1603540 вечер (neyroseti.neiroguru.ru) */
+var REG_WIDGETS = {
+  morning: { scriptId: 'e04c03445c8ba4aec27ab796b60f0f071be8d545' },
+  evening: { scriptId: 'a8f9560ed2afaa8af661741fad2cba9bd600204e' }
+};
+
+function syncUtmToUrl() {
+  if (!window.__utmParams) return;
+  var params = window.__utmParams();
+  if (!params.toString()) return;
+  try {
+    var url = new URL(location.href);
+    params.forEach(function (v, k) {
+      if (!url.searchParams.has(k)) url.searchParams.set(k, v);
+    });
+    history.replaceState(null, '', url.toString());
+  } catch (e) {}
+}
+
+var regScrollY = 0;
+var regViewportTimer = null;
+var regTouchBlocker = null;
+
+function getRegWidgetHost() {
+  return document.getElementById('reg-widget-host');
+}
+
+function markRegWidgetReady() {
+  var host = getRegWidgetHost();
+  if (host) host.classList.add('is-ready');
+}
+
+function lockPageScroll() {
+  regScrollY = window.scrollY || window.pageYOffset || 0;
+  var scrollbar = window.innerWidth - document.documentElement.clientWidth;
+  document.body.style.paddingRight = scrollbar > 0 ? scrollbar + 'px' : '';
+  document.documentElement.classList.add('reg-popup-open');
+  document.body.classList.add('reg-popup-open');
+  regTouchBlocker = function (ev) {
+    var panel = document.querySelector('.reg-popup-panel');
+    if (panel && panel.contains(ev.target)) return;
+    ev.preventDefault();
+  };
+  document.addEventListener('touchmove', regTouchBlocker, { passive: false });
+}
+
+function unlockPageScroll() {
+  document.documentElement.classList.remove('reg-popup-open');
+  document.body.classList.remove('reg-popup-open');
+  document.body.style.paddingRight = '';
+  if (regTouchBlocker) {
+    document.removeEventListener('touchmove', regTouchBlocker);
+    regTouchBlocker = null;
+  }
+}
+
+function fitRegPopupViewport() {
+  var popup = document.getElementById('reg-popup');
+  if (!popup || !popup.classList.contains('is-open')) return;
+  if (window.innerWidth > 760 || !window.visualViewport) {
+    popup.style.height = '';
+    popup.style.top = '';
+    return;
+  }
+  popup.style.height = window.visualViewport.height + 'px';
+  popup.style.top = window.visualViewport.offsetTop + 'px';
+}
+
+function scheduleRegViewportFit() {
+  if (regViewportTimer) window.clearTimeout(regViewportTimer);
+  regViewportTimer = window.setTimeout(function () {
+    regViewportTimer = null;
+    fitRegPopupViewport();
+  }, 80);
+}
+
+function resetRegPopupViewport() {
+  var popup = document.getElementById('reg-popup');
+  if (!popup) return;
+  popup.style.height = '';
+  popup.style.top = '';
+}
+
+function openRegForm(slot) {
+  var morning = document.getElementById('reg-slot-morning');
+  var evening = document.getElementById('reg-slot-evening');
+  if (!morning || !evening) return;
+  var isEvening = slot === 'evening';
+  morning.style.display = isEvening ? 'none' : 'block';
+  evening.style.display = isEvening ? 'block' : 'none';
+  openRegPopup();
+}
+
+function openRegPopup() {
+  var popup = document.getElementById('reg-popup');
+  if (!popup || popup.classList.contains('is-open')) return;
+  lockPageScroll();
+  popup.classList.add('is-open');
+  popup.setAttribute('aria-hidden', 'false');
+  fitRegPopupViewport();
+  if (getRegWidgetHost() && getRegWidgetHost().querySelector('iframe')) markRegWidgetReady();
+  requestAnimationFrame(function () {
+    var closeBtn = popup.querySelector('.reg-popup-close');
+    if (closeBtn) closeBtn.focus({ preventScroll: true });
+  });
+}
+
+function closeRegPopup() {
+  var popup = document.getElementById('reg-popup');
+  if (!popup || !popup.classList.contains('is-open')) return;
+  popup.classList.remove('is-open');
+  popup.setAttribute('aria-hidden', 'true');
+  resetRegPopupViewport();
+  unlockPageScroll();
+}
+
+function initRegWidgetMessages() {
+  window.addEventListener('message', function (e) {
+    if (!e.data || !e.data.height) return;
+    var ids = [REG_WIDGETS.morning.scriptId, REG_WIDGETS.evening.scriptId];
+    if (ids.indexOf(e.data.uniqName) !== -1 && e.data.height > 80) markRegWidgetReady();
+  });
+}
+
+function initRegPopup() {
+  syncUtmToUrl();
+  initRegWidgetMessages();
+  document.querySelectorAll('[data-reg-close]').forEach(function (el) {
+    el.addEventListener('click', closeRegPopup);
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') closeRegPopup();
+  });
+  if (window.visualViewport) {
+    window.visualViewport.addEventListener('resize', scheduleRegViewportFit);
+    window.visualViewport.addEventListener('scroll', scheduleRegViewportFit);
+  }
+  window.addEventListener('resize', scheduleRegViewportFit);
+  if (window.VIBE_VB) {
+    window.VIBE_VB.init({ openRegModal: openRegForm });
+  }
+}
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initRegPopup);
+} else {
+  initRegPopup();
+}
+</script>
+
+</body>
+</html>
